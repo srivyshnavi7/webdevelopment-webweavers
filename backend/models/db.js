@@ -1,19 +1,18 @@
-const mysql = require('mysql');
-require('dotenv').config();
+const mysql = require("mysql2");
 
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",       // Change this
+  password: "root",   // Change this
+  database: "webdevelopment",
 });
 
-db.connect(err => {
-    if (err) {
-        console.error("Database connection failed: " + err.message);
-    } else {
-        console.log("Connected to MySQL database");
-    }
+connection.connect((err) => {
+  if (err) {
+    console.error("❌ Database connection failed:", err);
+    return;
+  }
+  console.log("✅ Database connected successfully!");
 });
 
-module.exports = db;
+module.exports = connection;

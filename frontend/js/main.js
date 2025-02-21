@@ -1,4 +1,4 @@
-// Function to handle Profile Form Submission
+
 document.getElementById('profile-form')?.addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -14,7 +14,7 @@ document.getElementById('profile-form')?.addEventListener('submit', function(eve
 });
 
 function updateProfile(username, email, password) {
-    // Update the user profile on the server (mock API call for this example)
+    
     fetch('/api/update-profile', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,24 +34,21 @@ function updateProfile(username, email, password) {
     })
     .catch(error => alert("Error: " + error));
 }
-
-// Function to verify the ticket
 function verifyTicket() {
     const ticketNumber = document.getElementById('ticket-number')?.value;
     const qrInput = document.getElementById('qr-code-input')?.files[0];
 
     if (ticketNumber) {
-        // Simulate ticket verification based on the ticket number
         checkTicket(ticketNumber);
     } else if (qrInput) {
-        // If a QR code is uploaded, we can process it (here we simulate)
+        
         processQRCode(qrInput);
     } else {
         alert("Please enter a ticket number or scan a QR code.");
     }
 }
 
-// Simulate a ticket number check (e.g., via an API call)
+
 function checkTicket(ticketNumber) {
     fetch(`/api/verify-ticket/${ticketNumber}`)
         .then(response => response.json())
@@ -65,18 +62,16 @@ function checkTicket(ticketNumber) {
         .catch(error => alert("Error verifying ticket: " + error));
 }
 
-// Simulate QR Code processing (you'd integrate an actual QR code library here)
+
 function processQRCode(qrInput) {
     const reader = new FileReader();
     reader.onload = function(event) {
         const scannedData = event.target.result;
-        alert("QR code scanned: " + scannedData);  // In practice, use a library to parse the QR code
-        // You can pass the scanned QR data to a function to verify it
+        alert("QR code scanned: " + scannedData); 
     };
     reader.readAsText(qrInput);
 }
 
-// Function to handle login form submission
 document.getElementById('login-form')?.addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('login-username').value;
@@ -99,7 +94,7 @@ function loginUser(username, password) {
     .then(data => {
         if (data.success) {
             alert("Login successful!");
-            window.location.href = 'profile.html';  // Redirect to the profile page
+            window.location.href = 'profile.html';  
         } else {
             alert("Invalid credentials. Please try again.");
         }
@@ -107,7 +102,6 @@ function loginUser(username, password) {
     .catch(error => alert("Login error: " + error));
 }
 
-// Function to handle sign-up form submission
 document.getElementById('signup-form')?.addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('signup-username').value;
@@ -131,7 +125,7 @@ function signupUser(username, email, password) {
     .then(data => {
         if (data.success) {
             alert("Sign-up successful!");
-            window.location.href = 'login.html';  // Redirect to the login page
+            window.location.href = 'login.html'; 
         } else {
             alert("Sign-up failed. Please try again.");
         }
@@ -139,13 +133,13 @@ function signupUser(username, email, password) {
     .catch(error => alert("Sign-up error: " + error));
 }
 
-// Dynamically fetch events for the Events page (you can integrate with an API)
+
 function loadUpcomingEvents() {
     fetch('/api/events')
         .then(response => response.json())
         .then(events => {
             const eventListContainer = document.getElementById('events-list');
-            eventListContainer.innerHTML = '';  // Clear the event list
+            eventListContainer.innerHTML = '';  
             events.forEach(event => {
                 const eventCard = document.createElement('div');
                 eventCard.className = 'event-card';
@@ -168,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadUpcomingEvents();
     }
 });
-// Function to calculate and display the total price when the user changes the number of tickets
+
 document.getElementById('ticketCount').addEventListener('input', function() {
     var ticketCount = this.value;
     var pricePerTicket = 20; // Example price per ticket

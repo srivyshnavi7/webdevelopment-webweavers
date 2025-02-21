@@ -41,7 +41,7 @@
                     <label for="sign-up-password">Password</label>
                     <input type="password" id="sign-up-password" placeholder="Enter your password" required>
 
-                    <button type="submit">Sign Up</button>
+                    <button type="button" onclick="signUpUser()">Sign Up</button>
                 </form>
                 <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
             </div>
@@ -56,7 +56,8 @@
                     <label for="login-password">Password</label>
                     <input type="password" id="login-password" placeholder="Enter your password" required>
 
-                    <button type="submit">Login</button>
+                    <button type="button" onclick="signUpUser()">Sign Up</button>
+
                 </form>
                 <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
             </div>
@@ -64,6 +65,40 @@
     </section>
 
     <script>
+
+function signUpUser() {
+    const username = document.getElementById("sign-up-username").value.trim();
+    const email = document.getElementById("sign-up-email").value.trim();
+    const password = document.getElementById("sign-up-password").value.trim();
+
+    if (!username || !email || !password) {
+        alert("⚠️ Please fill in all fields!");
+        return;
+    }
+
+    console.log(`Signing up with: Username - ${username}, Email - ${email}`);
+
+    fetch("/api/signup", {  // ✅ Use relative path
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password })
+    })
+    .then(response => response.json().then(data => ({ status: response.status, body: data })))
+    .then(({ status, body }) => {
+        if (status === 201) {
+            alert(`✅ Signup successful: ${body.message}`);
+            window.location.href = "profile.html";
+        } else {
+            alert(`❌ Signup failed: ${body.message}`);
+        }
+    })
+    .catch(error => {
+        console.error("❌ Error:", error);
+        alert("❌ Signup failed. Please try again.");
+    });
+}
+
+
         // Show Sign Up Form
         function showSignUp() {
             document.getElementById("sign-up-form").style.display = "block";

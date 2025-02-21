@@ -1,0 +1,424 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navbar Styles */
+#navbar {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+#navbar nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+#navbar nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#navbar nav ul li a:hover {
+    color: #f4f4f9;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #5c6bc0;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#hero button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#hero button:hover {
+    background-color: #d32f2f;
+}
+
+/* Featured Events */
+#featured-events {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#featured-events h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.event-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    background-color: white;
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.event-card h3 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+.event-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.event-card button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.event-card button:hover {
+    background-color: #3f51b5;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Ticket Verification Section */
+#ticket-verification {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#ticket-verification h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+#ticket-number-verification, #qr-verification {
+    margin: 20px 0;
+}
+
+#ticket-verification input {
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#ticket-verification button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#ticket-verification button:hover {
+    background-color: #d32f2f;
+}
+
+/* Profile Page */
+#user-profile {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#profile-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#profile-form input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#profile-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#profile-form button:hover {
+    background-color: #3f51b5;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the Ticket Form */
+.ticket-form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Heading Style */
+.ticket-form-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Label Style */
+label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #555;
+}
+
+/* Input Field Style */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Submit Button Style */
+button.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-submit:hover {
+    background-color: #45a049;
+}
+
+/* Confirmation Message Style */
+#confirmationMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+#navbar {
+    background-color: #2c3e50;
+    padding: 15px;
+}
+
+#navbar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#navbar nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#navbar nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Auth Section */
+#auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+#auth-form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* Form Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+/* Auth Forms */
+.auth-form {
+    display: block;
+}
+
+.auth-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2980b9;
+}
+
+.auth-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #7f8c8d;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.auth-form input[type="email"], 
+.auth-form input[type="text"], 
+.auth-form input[type="password"] {
+    background-color: #ecf0f1;
+    color: #34495e;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Toggle links */
+.auth-form p {
+    text-align: center;
+}
+
+.auth-form a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #auth-form-container {
+        padding: 25px;
+    }
+}
+
+

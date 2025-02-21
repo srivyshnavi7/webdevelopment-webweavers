@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Verification - Event Ticketing System</title>
+    <link rel="stylesheet" href="C:\Users\shrav\OneDrive\Desktop\webdevelopment\frontend\css\styles.css">
+    <link rel="stylesheet" href="C:\Users\shrav\OneDrive\Desktop\webdevelopment\frontend\css\responsive.css
+    C:\Users\shrav\OneDrive\Desktop\webdevelopment\frontend\css\styles.css">
+</head>
+<body>
+
+    
+
+    <!-- Navbar -->
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="ticket-verification.html">Ticket Verification</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="ticket-form-container">
+        <h2>Enter the Number of Tickets</h2>
+        <form action="/submit-tickets" method="POST" id="ticketForm">
+            <label for="ticketCount">Number of Tickets:</label>
+            <input type="number" id="ticketCount" name="ticketCount" min="1" max="10" required>
+            
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+    <div id="confirmationMessage"></div>
+
+
+    <!-- Ticket Verification Section -->
+    <section id="ticket-verification">
+        <h2>Verify Your Ticket</h2>
+        <div id="qr-verification">
+            <h3>Scan QR Code</h3>
+            <input type="file" id="qr-code-input" accept="image/*">
+            <button onclick="verifyTicket()">Verify</button>
+        </div>
+
+        <div id="ticket-number-verification">
+            <h3>Enter Ticket Number</h3>
+            <input type="text" id="ticket-number" placeholder="Enter your ticket number">
+            <button onclick="verifyTicket()">Verify</button>
+        </div>
+
+        <div id="verification-result">
+            <!-- This will display the result after verification -->
+        </div>
+    </section>
+
+
+    <script src="C:\Users\shrav\OneDrive\Desktop\webdevelopment\frontend\js\main.js"></script>
+</body>
+</html>

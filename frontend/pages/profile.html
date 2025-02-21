@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login - Event Ticketing System</title>
+    <link rel="stylesheet" href="C:\Users\shrav\OneDrive\Desktop\webdevelopment\frontend\css\styles.css">
+    <link rel="stylesheet" href="C:\Users\shrav\OneDrive\Desktop\webdevelopment\frontend\css\responsive.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="ticket-verification.html">Ticket Verification</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Combined Auth Section -->
+    <section id="auth">
+        <h2>Sign Up or Login</h2>
+
+        <!-- Toggle between Sign Up and Login Forms -->
+        <div id="auth-form-container">
+
+            <!-- Sign Up Form -->
+            <div id="sign-up-form" class="auth-form">
+                <h3>Sign Up</h3>
+                <form id="sign-up">
+                    <label for="sign-up-username">Username</label>
+                    <input type="text" id="sign-up-username" placeholder="Enter your username" required>
+
+                    <label for="sign-up-email">Email</label>
+                    <input type="email" id="sign-up-email" placeholder="Enter your email" required>
+
+                    <label for="sign-up-password">Password</label>
+                    <input type="password" id="sign-up-password" placeholder="Enter your password" required>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form" style="display: none;">
+                <h3>Login</h3>
+                <form id="login">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Show Sign Up Form
+        function showSignUp() {
+            document.getElementById("sign-up-form").style.display = "block";
+            document.getElementById("login-form").style.display = "none";
+        }
+
+        // Show Login Form
+        function showLogin() {
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("sign-up-form").style.display = "none";
+        }
+
+        // Handle Sign Up Form Submission
+        document.getElementById("sign-up").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("sign-up-username").value;
+            const email = document.getElementById("sign-up-email").value;
+            const password = document.getElementById("sign-up-password").value;
+            // Here you will send the data to your backend to create a new user
+            console.log("Signing up with", { username, email, password });
+        });
+
+        // Handle Login Form Submission
+        document.getElementById("login").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+            // Here you will send the data to your backend to authenticate the user
+            console.log("Logging in with", { email, password });
+        });
+    </script>
+
+</body>
+</html>
